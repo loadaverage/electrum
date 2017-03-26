@@ -18,12 +18,12 @@
 #        -v /tmp/.X11-unix:/tmp/.X11-unix \
 #        -e DISPLAY=$DISPLAY electrum
 
-FROM debian:latest
+FROM debian:stretch
 MAINTAINER Vadim Sloun <github@roundside.com>
 ENV QT_X11_NO_MITSHM 1
 RUN export DEBIAN_FRONTEND=noninteractive && \
   apt-get update -qq && apt-get upgrade -yqq && \
-  apt-get install electrum --no-install-recommends -yqq && \
+  apt-get install electrum python-pbkdf2  python-qt4 --no-install-recommends -yqq && \
   useradd electrum -m -s /bin/bash 
 USER electrum
 CMD ["electrum"]
