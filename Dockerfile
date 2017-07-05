@@ -1,4 +1,4 @@
-# version: 0.0.1
+# version: 0.0.2
 # description: Electrum BitCoin wallet in Docker container, this image uses X11 socket
 #
 # Howto:
@@ -19,7 +19,7 @@
 #        -e DISPLAY=$DISPLAY electrum
 
 FROM debian:stretch
-MAINTAINER Vadim Sloun <github@roundside.com>
+LABEL maintainer="Vadim Sloun <github@roundside.com>"
 ENV QT_X11_NO_MITSHM 1
 RUN export DEBIAN_FRONTEND=noninteractive && \
   apt-get update -qq && apt-get upgrade -yqq && \
